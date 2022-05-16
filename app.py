@@ -1,23 +1,31 @@
 from flask import Flask
 from flask_restful import Api
-from flask_jwt_extended import JWTManager
-
-#import resources
-from resources.object_detect import ObjectDetect
 
 # create flask app instance
 app = Flask(__name__)
 
-#set config for jwt
+#set config
 app.config['PROPAGATE_EXCEPTIONS']=True
-app.config['JWT_SECRET_KEY'] = 'qp-cbit'
 
 #initialize api
 api = Api(app)
 
-api.add_resource(ObjectDetect, '/object-detect') #for admin to upload paper with an optional feature to set select_status=1
+#import resources
+from resources.object_detect import ObjectDetect
+from resources.depth_estimate import DepthEstimate
 
-jwt=JWTManager(app)
+api.add_resource(ObjectDetect, '/object-detect') #for admin to upload paper with an optional feature to set select_status=1
+api.add_resource(DepthEstimate, '/depth-estimate') #for admin to upload paper with an optional feature to set select_status=1
+
+
+import firebase_admin
+import os
+databaseURL = "https://api-endpoints-3d693-default-rtdb.firebaseio.com"
+cred_obj = firebase_admin.credentials.Certificate(os.path.join('tokens', 'fbServiceAccountKey.json'))
+default_app = firebase_admin.initialize_app(cred_obj, {
+	'databaseURL':databaseURL,
+    'storageBucket': 'api-endpoints-3d693.appspot.com'
+	})
 
 #a welcome route to test if the flask app is working.
 @app.route('/')
