@@ -34,7 +34,7 @@ Jinja2==3.1.2
 MarkupSafe==2.1.1
 msgpack==1.0.3
 numpy==1.22.3
-#opencv-python==4.5.5.64
+opencv-python==4.5.5.64
 #opencv-contrib-python-headless
 packaging==21.3
 proto-plus==1.20.3

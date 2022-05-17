@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import Api
 
 # create flask app instance
@@ -37,6 +37,10 @@ def home():
     return(f"""<h1 style="font-family: 'Palatino Linotype';">This is an API for the Smart blind assistant system.</h1>
                 <p style="font-size:2em">Developed by Harish Akula</p>""")
 
+@app.route('/tester')
+def my_checker():
+    return jsonify({"message" : "hello, this app is successfully working"})
+
 # set debug = False while deploying. debug = True is not safe in production environments
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(port=5000, debug=False)
