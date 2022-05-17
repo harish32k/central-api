@@ -3,3 +3,4 @@
 *.vscode/
 flaskenv/
 qp-api-flask/
+flaskenv_active.bat

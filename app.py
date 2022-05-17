@@ -13,9 +13,13 @@ api = Api(app)
 #import resources
 from resources.object_detect import ObjectDetect
 from resources.depth_estimate import DepthEstimate
+from resources.read_text import ReadText
+from resources.captioning import Captioning
 
-api.add_resource(ObjectDetect, '/object-detect') #for admin to upload paper with an optional feature to set select_status=1
-api.add_resource(DepthEstimate, '/depth-estimate') #for admin to upload paper with an optional feature to set select_status=1
+api.add_resource(ObjectDetect, '/object-detect')
+api.add_resource(DepthEstimate, '/depth-estimate')
+api.add_resource(ReadText, '/read-text')
+api.add_resource(Captioning, '/captioning')
 
 
 import firebase_admin
