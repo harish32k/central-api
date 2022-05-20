@@ -25,7 +25,7 @@ def convert_output(outputs):
 
 def draw_box_resize(img_name, outputs, data):
     img = get_image_fromb64(data[img_name])
-    save_json(outputs, filename = "my_output.json")
+    #save_json(outputs, filename = "my_output.json")
     detections = outputs[img_name]
     for detection in detections:
         color = (255, 0, 0)

@@ -58,7 +58,7 @@ class DepthEstimate(Resource):
 
         ################## Prediction
         outputs = call_model(model_input, "depth")
-        save_json(outputs, filename = "my_output.json")
+        #save_json(outputs, filename = "my_output.json")
         #print(outputs)
         #outputs = convert_output(outputs)
         ############################# Plotting boxes
