@@ -7,7 +7,7 @@ import base64
 from google.cloud.vision_v1 import AnnotateImageResponse
 import numpy as np
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'tokens/project-vimpaired-889c1c6eb1c1.json'
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join('tokens', 'aiServiceAccountKey.json')
 
 def detect_text(content):
     """Detects text in the file."""

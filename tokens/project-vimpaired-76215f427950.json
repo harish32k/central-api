@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "project-vimpaired",
+  "private_key_id": "76215f42795046c1349d081dac39598f1ed24c06",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCwS5T+/HZbsQgj\nl59aZ5HkxAN6RETuKTnaadaM5f8vUKMJ32IcN8edXxDmazWqZWyOpk9xejBXY7UX\n0esACQgt+XEjG1hoZanU2Rj14U97y8C5Lbszy6hL0r2SbLKvzguYRXMqmFFmAJoq\n6ivS3wrhx5l/Jo/hQLpRhzf87gjVFT9wfxMJLqpPcYH+udJh5G+ajyEBGEGb0Kyp\nplXr3cXG+daQ/XFte1JP0PVezNpuFvcFnpmjhoBMKsjWAJFqk+xZwQDf0cnd69k9\nYz70O1ejswijQiEwa6xzj7iEl4gF0AFrdpKJNQeOEU89jrSwnLt3tH8+AtdGlbdp\nn5JT/vuhAgMBAAECggEAB7X1yU8coSclom+x11f5osGFBZ6Ofw+cDKBkJmT/5V9x\neU+exuB7F8T0iqBGG5LhYOR6y8CRQTbZ92j/Z/cjkOYDK6RffuKlcmsT1nTmNe8X\nQDI1HCj/jmA92bWGsKRPNjfuN3ISkcBofdFT6d6TpzgeKVhnL7rve0kYavTOIf2z\nLYOS/cb2ZMBkKyF+rTac4qxEwXxAxBUF63cJ322W3+VIX23uN6WxV44SCafLvDYD\nYOtnPErpeTqcO7QzwSZl0TO45kW2C/FUK7ejnVcsDROw43On8ADYtDy3xatOYLXQ\n2geVffR4/rH3gKjdl/zJUv0lFQRsStOFa4vwxnkBfQKBgQDbvoWfbKsCVgQwmeYa\nUu2BGfPHkI1EfwpojBDqpwX6z0W+XCeyWgIll9UO5kQGYZSP/jkOgwp5mC7bRYrb\nazDSx6K+DwMUK4papV9mqFtaJHabypirOfpdp2fvqeLagyVORBQOc44Dzm0mea2/\nWz5sUys3T973vgYscY2UOIaMTQKBgQDNYeCdQY6fF16GzZy3oi2aMQA2ZPaVbiv3\ndCZ0HjKkay3yOyhhQSCSdbTkKzd0hxmBYrLt6FYJgPMqaeybe0bGI2TNN+nxX27J\ndkKAVU6j9LELKSSwvrzM09M51f8k2ki2myYGZX0rPCnxxnMALgZqIlZpwmn4lIpS\ns+UvLU/GpQKBgQCo2W7nn6KPuvShO8BZ/drN1tlBQUurlEq1Jttg01J+9IHM0hcW\nrp7zsAVg24LtvFFhi6DgC8UixdNLXdZi36y2afwdOn/NId+/4065HSiEzXvuHfDN\nsVE2YYo12D6eVSN3TkxzBkvblOS+KcVeQohmyEluyQq1Juirgd2eRQjuCQJ/b4O1\nca0mwzrtGESL0yk7mX0BoIcxW/F17eYi+ulqlducFuoIAsZZ6SwAC+NrONoh/x6Y\nCJUeIgrh/SWGUuWch/ivwr2ZSHWIsdqEQSoQiPVTK7wrL8xgttZM2hpXbqsW0A9t\nlguE6vS/0Ybu6ioTUY1TXhkxcMc2U7FZv0PbDQKBgQCgVJaDvX4ojzrpDPfihzNM\n5zZaSEbF9NgH0Jq8qenrguzNk5GpMskzENAZOZBZu+BKLu/oSRN3cpavo8hQOHb1\njpr6XUY+ThnAVajGYLRQDLn8A5PYTj1GCO0y+26rbu6jXoWBIBABkAPc9yuyh3bI\nwsHSYXCm1X8krXm1x50GQg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "vertex-ai-prediction@project-vimpaired.iam.gserviceaccount.com",
+  "client_id": "114552046503097176074",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vertex-ai-prediction%40project-vimpaired.iam.gserviceaccount.com"
+}

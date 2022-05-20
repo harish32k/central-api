@@ -3,6 +3,7 @@ from firebase_admin import credentials, messaging
 
 def send_push(title, msg, registration_token, dataObject=None):
     # See documentation on defining a message payload.
+    firebase_admin.messaging.AndroidConfig(priority="high")
     message = messaging.MulticastMessage(
         notification=messaging.Notification(
             title=title,

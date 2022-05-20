@@ -89,6 +89,7 @@ def call_model(input_data, task):
     if model_info["active"] == "0":
         return None
     # [END aiplatform_predict_custom_trained_model_sample]
+        
     results = predict_custom_trained_model_sample(
         project=model_info["project"],
         endpoint_id=model_info["endpoint"],
