@@ -45,8 +45,8 @@ class GriefSignaling(Resource):
         files=[]
         for img_name in images_list:
             image = get_image_fromb64(data[img_name])
-            data = Image.fromarray(image)
-            data.save(img_name+".jpg")
+            temp = Image.fromarray(image)
+            temp.save(img_name+".jpg")
             files.append(img_name+".jpg")
         msg = EmailMessage()
         msg.set_content("The body of the email is here")
