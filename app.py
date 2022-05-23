@@ -15,11 +15,13 @@ from resources.object_detect import ObjectDetect
 from resources.depth_estimate import DepthEstimate
 from resources.read_text import ReadText
 from resources.captioning import Captioning
+from resources.grief_signaling import GriefSignaling
 
 api.add_resource(ObjectDetect, '/object-detect')
 api.add_resource(DepthEstimate, '/depth-estimate')
 api.add_resource(ReadText, '/read-text')
 api.add_resource(Captioning, '/captioning')
+api.add_resource(GriefSignaling,'/grief-signaling')
 
 
 import firebase_admin
