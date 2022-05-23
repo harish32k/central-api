@@ -8,6 +8,7 @@ import imghdr
 import smtplib
 import ssl
 from email.message import EmailMessage
+import os
 
 def get_image_fromb64(encoded_str):
     im_bytes = base64.b64decode(encoded_str)
@@ -15,6 +16,16 @@ def get_image_fromb64(encoded_str):
     imageBGR = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
     imageRGB = cv2.cvtColor(imageBGR, cv2.COLOR_BGR2RGB)
     return imageRGB
+
+
+imgdir = "temp_captures"
+
+def create_dir_clear():
+    if not os.path.exists(imgdir):
+        os.makedirs(imgdir)
+    dir = os.path.join(imgdir)
+    for f in os.listdir(dir):
+        os.remove(os.path.join(dir, f))
 
 class GriefSignaling(Resource):
 
@@ -33,9 +44,12 @@ class GriefSignaling(Resource):
         if (img1 == img2 == img3 == img4 == None):
             return {"message" : "please send atleast one image"}, 400
 
-        uid = data.pop("uid"); 
-        lat = data.pop("lat");
+        uid = data.pop("uid") 
+        lat = data.pop("lat")
         lon = data.pop("lon")
+
+        create_dir_clear()
+
         images_list = [] #create a list of images sent to the API
         for key in data:
             if(data[key]):
@@ -46,8 +60,9 @@ class GriefSignaling(Resource):
         for img_name in images_list:
             image = get_image_fromb64(data[img_name])
             temp = Image.fromarray(image)
-            temp.save(img_name+".jpg")
-            files.append(img_name+".jpg")
+            imgpath = os.path.join(imgdir, img_name+".jpg")
+            temp.save(imgpath)
+            files.append(imgpath)
         msg = EmailMessage()
         msg.set_content("The body of the email is here")
         msg["Subject"] = "Grief Signaling"

@@ -4,3 +4,4 @@
 *.vscode/
 flaskenv/
 flaskenv_active.bat
+temp_captures/
