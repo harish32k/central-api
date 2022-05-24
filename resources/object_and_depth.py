@@ -24,8 +24,13 @@ def img_resize(img_name, outputs, data):
     img = cv2.resize(img, (int(w/1.2), int(h/1.2)), interpolation = cv2.INTER_AREA)
     return img
 
+def convert_output(outputs):
+    converted = {}
+    for output in outputs:
+        converted[output["name"]] = output["detections"]
+    return converted
 
-class DepthEstimate(Resource):
+class ComputeObjectDepth(Resource):
 
     def post(self):
         parser = reqparse.RequestParser()
@@ -54,33 +59,38 @@ class DepthEstimate(Resource):
                 continue
             instances.append({key:data[key]})
 
-        
-        # model_input = {}
-        # model_input['instances'] = instances
-
-        # ################## Prediction
-        # outputs = call_model(model_input, "depth")
-        # #save_json(outputs, filename = "my_output.json")
-        # #print(outputs)
-        # #outputs = convert_output(outputs)
-        # ############################# Plotting boxes
-
         #looping_prediction
-        outputs = {}
+        depth_outputs = {}
         for instance in instances:
             model_input = {}
             model_input['instances'] = [instance]
             output = call_model(model_input, "depth")
-            outputs.update(output)
+            depth_outputs.update(output)
 
-        clear_bucket_images()
+        # object detection
+        ###### JSON for Object detection
+        instance=[]
+        for i in data.keys():
+            if data[i] == None:
+                continue
+            temp = {}
+            temp['name'] = i
+            temp['image'] = data[i]
+            instance.append(temp)
+        model_input = {}
+        model_input['instances'] = instance
 
+        object_outputs = call_model(model_input, "object")
+        object_outputs = convert_output(object_outputs)
+
+        # depth image upload
         for img_name in images_list:
-            img = img_resize(img_name, outputs, data) 
+            img = img_resize(img_name, depth_outputs, data) 
             upload_img(img, name=img_name)
         
         set_image_list(images=images_list)
-        upload_notify(uid, "depth", outputs)
+        upload_notify(uid, "obj_depth", object_outputs) # object detections upload
         
-        #return jsonify(outputs)
-        return jsonify(get_endpoint('object'))
+        #return jsonify({"val" : str(depth_outputs)[:20]})
+        return jsonify({"message" : "success"})
+        #return jsonify(get_endpoint('object'))

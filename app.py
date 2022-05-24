@@ -16,12 +16,14 @@ from resources.depth_estimate import DepthEstimate
 from resources.read_text import ReadText
 from resources.captioning import Captioning
 from resources.grief_signaling import GriefSignaling
+from resources.object_and_depth import ComputeObjectDepth
 
 api.add_resource(ObjectDetect, '/object-detect')
 api.add_resource(DepthEstimate, '/depth-estimate')
 api.add_resource(ReadText, '/read-text')
 api.add_resource(Captioning, '/captioning')
 api.add_resource(GriefSignaling,'/grief-signaling')
+api.add_resource(ComputeObjectDepth,'/object-and-depth')
 
 
 import firebase_admin
@@ -45,4 +47,4 @@ def my_checker():
 
 # set debug = False while deploying. debug = True is not safe in production environments
 if __name__ == '__main__':
-    app.run(port=5000, debug=False)
+    app.run(host='0.0.0.0', debug=True)
