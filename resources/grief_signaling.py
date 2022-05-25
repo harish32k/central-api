@@ -66,9 +66,13 @@ class GriefSignaling(Resource):
         msg = EmailMessage()
         msg.set_content("The body of the email is here")
         msg["Subject"] = "Grief Signaling"
-        msg["From"] = "gondesia.nani@gmail.com"
+        msg["From"] = "vimpaired.app@gmail.com"
         msg["To"] = "harish.akula213@gmail.com"
-        msg.set_content(" Emergency for the user.\n User Details:\n Latitude:80.2 , Longitide: 80.3")
+        msg.set_content(f"""Emergency for the user.\n  \
+        User: {uid}
+        \n Latitude:{lat} , Longitide: {lon}\n
+        Open in google maps:\
+        https://www.google.com/maps/search/?api=1&query={lat},{lon}""")
         for file in files:
             with open(file, 'rb') as m:
                 file_date = m.read()
@@ -77,9 +81,9 @@ class GriefSignaling(Resource):
             msg.add_attachment(file_date, maintype='image', subtype=file_type, filename=file_name)
 
         context = ssl.create_default_context()
-        with smtplib.SMTP("smtp.gmail.com", port=25) as smtp:
+        with smtplib.SMTP("smtp.gmail.com", port=587) as smtp:
             smtp.starttls(context=context)
-            smtp.login(msg["From"], "prasad123456789")
+            smtp.login(msg["From"], "Vimpaired2021")
             smtp.send_message(msg)
 
         return jsonify("Grief Signaling Successful")
