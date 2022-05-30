@@ -68,10 +68,10 @@ class GriefSignaling(Resource):
         msg["Subject"] = "Grief Signaling"
         msg["From"] = "vimpaired.app@gmail.com"
         msg["To"] = "harish.akula213@gmail.com"
-        msg.set_content(f"""Emergency for the user.\n  \
-        User: {uid}
-        \n Latitude:{lat} , Longitide: {lon}\n
-        Open in google maps:\
+        msg.set_content(f"""Emergency for the user.\n\
+        User: {uid}\n
+        Latitude:{lat} , Longitide: {lon}\n
+        Open in google maps: \
         https://www.google.com/maps/search/?api=1&query={lat},{lon}""")
         for file in files:
             with open(file, 'rb') as m:

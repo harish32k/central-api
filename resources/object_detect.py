@@ -38,7 +38,8 @@ def draw_box_resize(img_name, outputs, data):
         print(detection)
     img = cv2.cvtColor(img , cv2.COLOR_BGR2RGB)
     h, w = img.shape[:2]
-    img = cv2.resize(img, (int(w/1.2), int(h/1.2)), interpolation = cv2.INTER_AREA)
+    #img = cv2.resize(img, (int(w/1.2), int(h/1.2)), interpolation = cv2.INTER_AREA)
+    img = cv2.resize(img, (1200, 900), interpolation = cv2.INTER_LINEAR)
     return img
 
 

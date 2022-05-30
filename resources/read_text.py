@@ -19,7 +19,8 @@ def save_json(content, filename = "json_output.json"):
 
 def img_resize(img):
     h, w = img.shape[:2]
-    img = cv2.resize(img, (int(w/1.2), int(h/1.2)), interpolation = cv2.INTER_AREA)
+    #img = cv2.resize(img, (int(w/1.2), int(h/1.2)), interpolation = cv2.INTER_AREA)
+    img = cv2.resize(img, (1200, 900), interpolation = cv2.INTER_LINEAR)
     return img
 
 

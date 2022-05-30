@@ -15,6 +15,7 @@ from resources.object_detect import ObjectDetect
 from resources.depth_estimate import DepthEstimate
 from resources.read_text import ReadText
 from resources.captioning import Captioning
+#from resources.new_captioning import NewCaption as Caption
 from resources.grief_signaling import GriefSignaling
 from resources.object_and_depth import ComputeObjectDepth
 
