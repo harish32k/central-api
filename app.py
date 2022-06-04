@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from flask_restful import Api
+from resources.face_detect import FaceDetect
 
 # create flask app instance
 app = Flask(__name__)
@@ -25,6 +26,7 @@ api.add_resource(ReadText, '/read-text')
 api.add_resource(Captioning, '/captioning')
 api.add_resource(GriefSignaling,'/grief-signaling')
 api.add_resource(ComputeObjectDepth,'/object-and-depth')
+api.add_resource(FaceDetect,'/face-detect')
 
 
 import firebase_admin
